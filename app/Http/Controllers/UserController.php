@@ -20,8 +20,8 @@ class UserController extends Controller
         // dd($files);
         $user["to"]=$request->mail;
         Mail::send("mail",["name"=>"nilanjan"],function($message) use ($user,$files) {
-            $message->from('nilanjan@aqbsolutions.com', '3ps');
-            $message->to($user["to"]);
+            $message->from('nilanjan@gmail.com', '3ps');
+            $message->cc('info@fhgtfu.com')->to($user["to"]);
             $message->subject("something");
 
             foreach ($files as $file){
